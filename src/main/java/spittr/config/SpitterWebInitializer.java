@@ -27,13 +27,13 @@ public class SpitterWebInitializer extends AbstractAnnotationConfigDispatcherSer
      * 配置防止中文字符集乱码的过滤器
      * @return
      */
-    @Override
-    protected Filter[] getServletFilters() {
-        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-        characterEncodingFilter.setEncoding("utf-8");
-        characterEncodingFilter.setForceEncoding(true);
-        return new Filter[] {characterEncodingFilter};
-    }
+//    @Override
+//    protected Filter[] getServletFilters() {
+//        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+//        characterEncodingFilter.setEncoding("utf-8");
+//        characterEncodingFilter.setForceEncoding(true);
+//        return new Filter[] {characterEncodingFilter};
+//    }
 
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
