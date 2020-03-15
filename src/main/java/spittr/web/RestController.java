@@ -3,17 +3,17 @@ package spittr.web;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import spittr.pojo.User;
 
-//@Controller
-@org.springframework.web.bind.annotation.RestController
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+// @org.springframework.web.bind.annotation.RestController
 public class RestController {
     @GetMapping("/rest")
-//    @ResponseBody
+    @ResponseBody
     public User user(@RequestParam(
             defaultValue = "2"
     ) int id, @RequestParam(
@@ -21,6 +21,15 @@ public class RestController {
     ) String name) {
         User user = new User(1, "sss");
         return user;
+    }
+
+    @GetMapping("/rest1")
+    @ResponseBody
+    public List<User> users() {
+        List<User> users = new ArrayList<>();
+        users.add(new User(1, "sss"));
+        users.add(new User(2, "fff"));
+        return users;
     }
 
 //    @GetMapping("/rest/{id}")

@@ -21,8 +21,8 @@ public class WebConfig extends WebMvcConfigurationSupport {
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/views/");
-        resolver.setSuffix(".jsp");
+        resolver.setPrefix("/");
+        resolver.setSuffix(".html");
         return resolver;
     }
 
@@ -31,13 +31,8 @@ public class WebConfig extends WebMvcConfigurationSupport {
         configurer.enable();
     }
 
-//    @Override
-//    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/").addResourceLocations("/**");
-//    }
-
     @Bean
-    public MultipartResolver multipartResolver() throws IOException {
+    public MultipartResolver multipartResolver() {
         return new StandardServletMultipartResolver();
     }
 }
